@@ -19,7 +19,6 @@ axios.all(promiseArray)
     var output = temp.reduce((a,b) => {
       return a + b;
     });
-    output = output/1000
     console.log("Your total size of all your packages minified is: "+fileSize(output));
   })
-  .catch(err => console.log(err))
+  .catch(console.log)
