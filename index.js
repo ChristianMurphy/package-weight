@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const path = require('path');
 const axios = require('axios');
-
+const fileSize = require('fileSize');
 let packageJson = path.resolve("package.json");
 
 packageJson = path.normalize(packageJson);
@@ -20,6 +20,6 @@ axios.all(promiseArray)
       return a + b;
     });
     output = output/1000
-    console.log("Your total size of all your packages is: "+output+"kb!");
+    console.log("Your total size of all your packages minified is: "+fileSize(output));
   })
   .catch(err => console.log(err))
