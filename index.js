@@ -2,10 +2,8 @@
 const path = require('path');
 const axios = require('axios');
 const fileSize = require('fileSize');
-let packageJson = path.resolve("package.json");
 
-packageJson = path.normalize(packageJson);
-packageJson = require(packageJson);
+packageJson = require(path.resolve("package.json"));
 packageList = [];
 console.log("Gathering packages...")
 for (package in packageJson.dependencies) {
